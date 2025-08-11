@@ -4,7 +4,7 @@ public class StopWatch {
     private int minutes;
     private int hours;
     private int days;
-    private int workingHours = 24;
+    private int dailyHours = 24;
 
     public void record(int minutes) {
         if (minutes < 0) return;
@@ -13,9 +13,9 @@ public class StopWatch {
         this.minutes = minutes % 60;
 
         this.hours = totalHours;
-        if (this.hours >= workingHours) {
-            this.days = this.hours / workingHours;
-            this.hours = this.hours % workingHours;
+        if (this.hours >= dailyHours) {
+            this.days = this.hours / dailyHours;
+            this.hours = this.hours % dailyHours;
         }
     }
     public int getMinutes() {
@@ -27,7 +27,7 @@ public class StopWatch {
     public int getDays() {
         return days;
     }
-    public void setWorkingHours(int workingHours) {
-        this.workingHours = workingHours;
+    public void setDailyHours(int dailyHours) {
+        this.dailyHours = dailyHours;
     }
 }

@@ -58,7 +58,7 @@ public class StopWatchTest {
     void givenDailyWorkingHours_whenRecorded_thenIncreaseDaysAccordingly() {
         // Arrange
         StopWatch stopWatch = new StopWatch();
-        stopWatch.setWorkingHours(8);
+        stopWatch.setDailyHours(8);
 
         // Act
         stopWatch.record(600);
