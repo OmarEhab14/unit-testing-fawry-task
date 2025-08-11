@@ -16,4 +16,17 @@ public class StopWatchTest {
         int minutes = stopWatch.getMinutes();
         Assertions.assertEquals(10, minutes);
     }
+    @Test
+    void givenNegativeMinutes_whenRecord_thenMinutesDoNotChange() {
+        // Arrange
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.record(10);
+
+        // Act
+        stopWatch.record(-5);
+
+        // Assert
+        int minutes = stopWatch.getMinutes();
+        Assertions.assertEquals(10, minutes);
+    }
 }
