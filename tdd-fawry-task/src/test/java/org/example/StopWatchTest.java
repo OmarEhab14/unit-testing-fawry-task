@@ -41,4 +41,17 @@ public class StopWatchTest {
         Assertions.assertEquals(0, stopWatch.getMinutes());
         Assertions.assertEquals(1, stopWatch.getHours());
     }
+    @Test
+    void givenHoursReachedTwentyFour_whenRecord_thenIncreaseDays() {
+        // Arrange
+        StopWatch stopWatch = new StopWatch();
+
+        // Act
+        stopWatch.record(1500);
+
+        // Assert
+        Assertions.assertEquals(0, stopWatch.getMinutes());
+        Assertions.assertEquals(1, stopWatch.getHours());
+        Assertions.assertEquals(1, stopWatch.getDays());
+    }
 }
